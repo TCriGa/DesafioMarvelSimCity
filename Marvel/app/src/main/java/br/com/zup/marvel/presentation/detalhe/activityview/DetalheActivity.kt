@@ -11,6 +11,7 @@ import br.com.zup.marvel.databinding.ActivityDetalheBinding
 class DetalheActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDetalheBinding
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityDetalheBinding.inflate(layoutInflater)
@@ -36,11 +37,15 @@ class DetalheActivity : AppCompatActivity() {
         binding.tvHeroiDetalhe.text = marvel.detail
     }
 
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (item.itemId == android.R.id.home) {
             this.finish()
+
             return true
         }
         return super.onOptionsItemSelected(item)
     }
+
+
 }

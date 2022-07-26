@@ -29,7 +29,7 @@
             android:name="br.com.zup.marvel.presentation.detalhe.activityview.DetalheActivity"
             android:exported="false" />
         <activity
-            android:name="br.com.zup.marvel.presentation.home.view.HomeActivity"
+            android:name="br.com.zup.marvel.presentation.homemarvel.activityview.HomeMarvelActivity"
             android:exported="false" />
     </application>
 

@@ -9,6 +9,7 @@ import br.com.zup.marvel.NAME_ERROR_MESSAGE
 import br.com.zup.marvel.PASSWORD_ERROR_MESSAGE
 import br.com.zup.marvel.data.repository.AuthenticationRepository
 import br.com.zup.marvel.domain.model.Users
+import java.util.regex.Pattern
 
 class RegisterViewModel : ViewModel() {
 
@@ -21,14 +22,28 @@ class RegisterViewModel : ViewModel() {
     val errorState: LiveData<String> = _errorState
 
     fun validateDateUsers(users: Users) {
+        val emailPattern: Pattern =
+            Pattern.compile(
+                "[a-z0-9!#\$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#\$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
+            )
+        val passwordPattern: Pattern =
+            Pattern.compile(
+                "^(?=.*).{8,}\$"
+            )
+        val namePattern: Pattern =
+            Pattern.compile(
+                "(.*[a-z]){3}"
+            )
+
         when {
-            users.name.isEmpty() -> {
+            users.name.isEmpty() || !namePattern.matcher(users.name).matches() -> {
+
                 _errorState.value = NAME_ERROR_MESSAGE
             }
-            users.email.isEmpty() -> {
+            users.email.isEmpty() || !emailPattern.matcher(users.email).matches() -> {
                 _errorState.value = EMAIL_ERROR_MESSAGE
             }
-            users.password.isEmpty() -> {
+            users.password.isEmpty() || !passwordPattern.matcher(users.password).matches() -> {
                 _errorState.value = PASSWORD_ERROR_MESSAGE
             }
             else -> {

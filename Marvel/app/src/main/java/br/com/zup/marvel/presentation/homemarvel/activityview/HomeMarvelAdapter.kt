@@ -1,4 +1,4 @@
-package br.com.zup.marvel.presentation.home.view
+package br.com.zup.marvel.presentation.homemarvel.activityview
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -6,10 +6,10 @@ import androidx.recyclerview.widget.RecyclerView
 import br.com.zup.marvel.data.model.Marvel
 import br.com.zup.marvel.databinding.MarvelItemBinding
 
-class MarvelAdapter(
+class HomeMarvelAdapter(
     private var marvelList: MutableList<Marvel>,
     private val clickMarvel: (marvel: Marvel) -> Unit
-) : RecyclerView.Adapter<MarvelAdapter.ViewHolder>() {
+) : RecyclerView.Adapter<HomeMarvelAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val binding = MarvelItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)

@@ -2,12 +2,14 @@ package br.com.zup.marvel.presentation.register.activityview
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
+import br.com.zup.marvel.TITLE_REGISTER
 import br.com.zup.marvel.USERS_KEY
 import br.com.zup.marvel.databinding.ActivityRegisterBinding
 import br.com.zup.marvel.domain.model.Users
-import br.com.zup.marvel.presentation.home.view.HomeActivity
+import br.com.zup.marvel.presentation.homemarvel.activityview.HomeMarvelActivity
 import br.com.zup.marvel.presentation.register.viewmodel.RegisterViewModel
 import com.google.android.material.snackbar.Snackbar
 
@@ -23,13 +25,14 @@ class RegisterActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityRegisterBinding.inflate(layoutInflater)
         setContentView(binding.root)
-    }
 
-    override fun onResume() {
-        super.onResume()
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.title = TITLE_REGISTER
+
         clickRegister()
         initObserver()
     }
+
 
     private fun clickRegister() {
         binding.buttonRegister.setOnClickListener {
@@ -49,13 +52,24 @@ class RegisterActivity : AppCompatActivity() {
         viewModel.registerState.observe(this) {
             goToHomeMarvel(it)
         }
-        viewModel.errorState.observe(this){
+        viewModel.errorState.observe(this) {
             Snackbar.make(binding.root, it, Snackbar.LENGTH_SHORT).show()
         }
     }
 
     private fun goToHomeMarvel(users: Users) {
-        startActivity(Intent(this, HomeActivity::class.java)
+        startActivity(Intent(this, HomeMarvelActivity::class.java)
             .apply { putExtra(USERS_KEY, users) })
     }
+
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId == android.R.id.home) {
+            onBackPressed()
+
+            return true
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
 }

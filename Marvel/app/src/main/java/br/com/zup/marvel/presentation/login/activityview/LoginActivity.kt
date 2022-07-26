@@ -4,10 +4,11 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
+import br.com.zup.marvel.TITLE_LOGIN
 import br.com.zup.marvel.USERS_KEY
 import br.com.zup.marvel.databinding.ActivityLoginBinding
 import br.com.zup.marvel.domain.model.Users
-import br.com.zup.marvel.presentation.home.view.HomeActivity
+import br.com.zup.marvel.presentation.homemarvel.activityview.HomeMarvelActivity
 import br.com.zup.marvel.presentation.login.viewmodel.LoginViewModel
 import br.com.zup.marvel.presentation.register.activityview.RegisterActivity
 import com.google.android.material.snackbar.Snackbar
@@ -24,6 +25,9 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+
+        supportActionBar?.title = TITLE_LOGIN
     }
 
     override fun onResume() {
@@ -55,13 +59,15 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun goToHomeMarvel(users: Users) {
-        startActivity(Intent(this, HomeActivity::class.java)
+        startActivity(Intent(this, HomeMarvelActivity::class.java)
             .apply { putExtra(USERS_KEY, users) })
     }
 
     private fun clickButtonLogin() {
-        val getDataUsers = getDataUsers()
-        viewModel.validateDataUser(getDataUsers)
+        binding.buttonLogin.setOnClickListener {
+            val getDataUsers = getDataUsers()
+            viewModel.validateDataUser(getDataUsers)
+        }
     }
 
     private fun clickButtonCreateRegister() {

@@ -10,11 +10,11 @@
     android:paddingBottom="@dimen/padding_16"
     tools:context=".presentation.register.activityview.RegisterActivity">
 
-    <androidx.appcompat.widget.AppCompatEditText
+    <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/edit_nameRegister"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
+        app:errorEnabled="true"
         android:layout_marginTop="@dimen/margin_top_32"
         android:hint="@string/register_name"
         android:inputType="textAutoComplete"
@@ -24,7 +24,7 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.appcompat.widget.AppCompatEditText
+    <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/edit_emailRegister"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -32,15 +32,17 @@
         android:hint="@string/register_email"
         android:inputType="textEmailAddress"
         android:selectAllOnFocus="true"
+        app:errorEnabled="true"
         app:layout_constraintLeft_toLeftOf="@id/edit_nameRegister"
         app:layout_constraintRight_toRightOf="@id/edit_nameRegister"
         app:layout_constraintTop_toBottomOf="@id/edit_nameRegister" />
 
-    <androidx.appcompat.widget.AppCompatEditText
+    <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/edit_passwordRegister"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_16"
+        app:errorEnabled="true"
         android:hint="@string/register_password"
         android:inputType="textPassword"
         android:selectAllOnFocus="true"

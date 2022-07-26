@@ -9,7 +9,7 @@ import br.com.zup.marvel.PASSWORD_ERROR_MESSAGE
 import br.com.zup.marvel.data.repository.AuthenticationRepository
 import br.com.zup.marvel.domain.model.Users
 
-class LoginViewModel:ViewModel() {
+class LoginViewModel : ViewModel() {
     private val authenticationRepository = AuthenticationRepository()
 
     private var _loginState = MutableLiveData<Users>()
@@ -19,6 +19,7 @@ class LoginViewModel:ViewModel() {
     val errorState: LiveData<String> = _errorState
 
     fun validateDataUser(users: Users) {
+
         when {
             users.email.isEmpty() -> {
                 _errorState.value = EMAIL_ERROR_MESSAGE
@@ -26,6 +27,7 @@ class LoginViewModel:ViewModel() {
             users.password.isEmpty() -> {
                 _errorState.value = PASSWORD_ERROR_MESSAGE
             }
+
             else -> {
                 loginUser(users)
             }

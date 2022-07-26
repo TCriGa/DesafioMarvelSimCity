@@ -4,7 +4,6 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import br.com.zup.marvel.R
-import br.com.zup.marvel.presentation.home.view.HomeActivity
 import br.com.zup.marvel.presentation.login.activityview.LoginActivity
 import java.util.*
 

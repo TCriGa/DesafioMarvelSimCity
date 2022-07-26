@@ -10,7 +10,7 @@ import com.google.firebase.ktx.Firebase
 class AuthenticationRepository {
     private val auth: FirebaseAuth = Firebase.auth
 
-    fun registerUser(email: String, password: String): Task<AuthResult>{
+    fun registerUser(email: String, password: String): Task<AuthResult> {
         return auth.createUserWithEmailAndPassword(email, password)
     }
 
@@ -27,8 +27,8 @@ class AuthenticationRepository {
         return auth.signInWithEmailAndPassword(email, password)
     }
 
-    fun getNameUser(): String = auth.currentUser?.displayName.toString()
+    fun getNameUsers(): String = auth.currentUser?.displayName.toString()
 
-    fun getEmailUser(): String = auth.currentUser?.email.toString()
+    fun getEmailUsers(): String = auth.currentUser?.email.toString()
 
 }
