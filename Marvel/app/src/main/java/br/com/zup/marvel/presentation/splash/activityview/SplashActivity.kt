@@ -1,10 +1,11 @@
-package br.com.zup.marvel.ui.splash.view
+package br.com.zup.marvel.presentation.splash.activityview
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import br.com.zup.marvel.R
-import br.com.zup.marvel.ui.home.view.HomeActivity
+import br.com.zup.marvel.presentation.home.view.HomeActivity
+import br.com.zup.marvel.presentation.login.activityview.LoginActivity
 import java.util.*
 
 class SplashActivity : AppCompatActivity() {
@@ -22,7 +23,7 @@ class SplashActivity : AppCompatActivity() {
 
     private fun jump() {
         timer.cancel()
-        startActivity(Intent(this, HomeActivity::class.java))
+        startActivity(Intent(this, LoginActivity::class.java))
         this.finish()
     }
 }

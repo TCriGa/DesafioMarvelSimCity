@@ -1,4 +1,4 @@
-package br.com.zup.marvel.ui.home.view
+package br.com.zup.marvel.presentation.home.view
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

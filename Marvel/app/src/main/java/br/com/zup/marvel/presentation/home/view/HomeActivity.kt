@@ -1,4 +1,4 @@
-package br.com.zup.marvel.ui.home.view
+package br.com.zup.marvel.presentation.home.view
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -7,9 +7,9 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import br.com.zup.marvel.*
 import br.com.zup.marvel.databinding.ActivityHomeBinding
-import br.com.zup.marvel.ui.detalhe.DetalheActivity
+import br.com.zup.marvel.presentation.detalhe.activityview.DetalheActivity
 import br.com.zup.marvel.data.model.Marvel
-import br.com.zup.marvel.ui.home.viewmodel.HomeViewModel
+import br.com.zup.marvel.presentation.home.viewmodel.HomeViewModel
 
 class HomeActivity : AppCompatActivity() {
     private lateinit var binding: ActivityHomeBinding
@@ -49,5 +49,6 @@ class HomeActivity : AppCompatActivity() {
         }
         startActivity(intent)
     }
+
 
 }

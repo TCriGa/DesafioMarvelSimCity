@@ -8,16 +8,18 @@
     android:paddingTop="@dimen/padding_16"
     android:paddingRight="@dimen/padding_16"
     android:paddingBottom="@dimen/padding_16"
-    tools:context=".ui.login.LoginActivity">
+    tools:context=".presentation.login.activityview.LoginActivity">
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/edit_emailLogin"
         android:layout_width="@dimen/width_0"
         android:layout_height="wrap_content"
-        android:layout_marginTop="160dp"
+        android:layout_marginTop="@dimen/margin_top160"
         android:hint="@string/login"
         android:inputType="textEmailAddress"
         android:selectAllOnFocus="true"
+        android:textSize="@dimen/size_14"
+        android:textStyle="bold"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -32,6 +34,8 @@
         android:imeOptions="actionDone"
         android:inputType="textPassword"
         android:selectAllOnFocus="true"
+        android:textSize="@dimen/size_14"
+        android:textStyle="bold"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="@id/edit_emailLogin"
         app:layout_constraintRight_toRightOf="@id/edit_emailLogin"
@@ -44,7 +48,8 @@
         android:gravity="end"
         android:text="@string/new_register"
         android:textAlignment="viewEnd"
-        android:textStyle="bold"
+        android:textSize="@dimen/size_14"
+        android:textStyle="italic"
         app:layout_constraintLeft_toLeftOf="@id/edit_password"
         app:layout_constraintRight_toRightOf="@id/edit_password"
         app:layout_constraintTop_toBottomOf="@id/edit_password" />

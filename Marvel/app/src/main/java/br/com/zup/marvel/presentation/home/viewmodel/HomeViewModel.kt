@@ -1,4 +1,4 @@
-package br.com.zup.marvel.ui.home.viewmodel
+package br.com.zup.marvel.presentation.home.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
