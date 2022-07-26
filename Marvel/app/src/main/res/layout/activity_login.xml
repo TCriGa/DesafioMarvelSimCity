@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/padding_16"
+    android:paddingTop="@dimen/padding_16"
+    android:paddingRight="@dimen/padding_16"
+    android:paddingBottom="@dimen/padding_16"
+    tools:context=".ui.login.LoginActivity">
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/edit_emailLogin"
+        android:layout_width="@dimen/width_0"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="160dp"
+        android:hint="@string/login"
+        android:inputType="textEmailAddress"
+        android:selectAllOnFocus="true"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/edit_password"
+        android:layout_width="@dimen/width_0"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:hint="@string/password"
+        android:imeActionLabel="@string/sign_in"
+        android:imeOptions="actionDone"
+        android:inputType="textPassword"
+        android:selectAllOnFocus="true"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="@id/edit_emailLogin"
+        app:layout_constraintRight_toRightOf="@id/edit_emailLogin"
+        app:layout_constraintTop_toBottomOf="@+id/edit_emailLogin" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvRegisterNow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:text="@string/new_register"
+        android:textAlignment="viewEnd"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="@id/edit_password"
+        app:layout_constraintRight_toRightOf="@id/edit_password"
+        app:layout_constraintTop_toBottomOf="@id/edit_password" />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:layout_marginTop="@dimen/margin_top_32"
+        android:background="@color/red_700"
+        android:text="@string/action_sign_in"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/tvRegisterNow"
+        app:layout_constraintStart_toStartOf="@+id/tvRegisterNow"
+        app:layout_constraintTop_toBottomOf="@+id/tvRegisterNow" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

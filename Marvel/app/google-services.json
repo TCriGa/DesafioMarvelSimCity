@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "864448589276",
+    "project_id": "marvel-sim-city",
+    "storage_bucket": "marvel-sim-city.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:864448589276:android:06085369eac007bf323319",
+        "android_client_info": {
+          "package_name": "br.com.zup.marvel"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "864448589276-f2i01ubn6c37p6v83t15t4bcr861hi0p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAs7kRTMxBcWbVvkuHX5k28A_ZyjsC2tuk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "864448589276-f2i01ubn6c37p6v83t15t4bcr861hi0p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
