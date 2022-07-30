@@ -26,7 +26,7 @@ class RegisterViewModel(private val authenticationRepository: AuthenticationRepo
             registerUsers(users)
     }
 
-    fun haveErrorsDateUsers(users: Users): Boolean {
+   fun haveErrorsDateUsers(users: Users): Boolean {
         val emailPattern: Pattern =
             Pattern.compile(
                 "[a-z0-9!#\$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#\$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
@@ -60,7 +60,7 @@ class RegisterViewModel(private val authenticationRepository: AuthenticationRepo
         }
     }
 
-    fun registerUsers(user: Users) {
+    private fun registerUsers(user: Users) {
         try {
             authenticationRepository.registerUser(
                 user.email,

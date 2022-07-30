@@ -65,7 +65,7 @@ class HomeMarvelActivity : AppCompatActivity() {
         startActivity(Intent(this, LoginActivity::class.java))
     }
 
-    private fun showUsesData() {
+    fun showUsesData() {
         val name = viewModel.getUsersName()
         val email = viewModel.getUsersEmail()
         binding.tvUserMessage.text = getString(R.string.welcome_messages, "$name - $email")

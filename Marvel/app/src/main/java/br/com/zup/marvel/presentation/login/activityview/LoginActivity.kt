@@ -26,7 +26,6 @@ class LoginActivity : AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
         supportActionBar?.title = TITLE_LOGIN
     }
 

@@ -9,8 +9,8 @@ import br.com.zup.marvel.PASSWORD_ERROR_MESSAGE
 import br.com.zup.marvel.data.repository.AuthenticationRepository
 import br.com.zup.marvel.domain.model.Users
 
-class LoginViewModel : ViewModel() {
-    private val authenticationRepository = AuthenticationRepository()
+class LoginViewModel( private val authenticationRepository: AuthenticationRepository = AuthenticationRepository()) : ViewModel() {
+
 
     private var _loginState = MutableLiveData<Users>()
     val loginState: LiveData<Users> = _loginState
