@@ -21,7 +21,6 @@ import org.junit.runner.RunWith
 @RunWith(AndroidJUnit4::class)
 class HomeMarvelActivityTest {
     private var authenticationRepositoryMockk: AuthenticationRepository = mockk(relaxed = true)
-    private var viewModel = HomeViewModel(authenticationRepositoryMockk)
     private lateinit var stringToPasswordCorrect: String
     private lateinit var stringToEmailCorrect: String
 
